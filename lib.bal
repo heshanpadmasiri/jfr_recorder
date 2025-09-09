@@ -30,8 +30,7 @@ public isolated function continuouslyRecordJfr(string path, string[] events, int
     future<()> _ = start continuouslyRecordJfrInner(java:fromString(path), eventsArray, duration);
 }
 
-
-public isolated function continuouslyRecordJfrInner(handle path, handle events, int duration) {
+isolated function continuouslyRecordJfrInner(handle path, handle events, int duration) {
     while true {
         recordJfrInner(path, events, duration);
         runtime:sleep(<decimal> duration);
