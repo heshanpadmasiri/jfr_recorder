@@ -2,7 +2,7 @@
 org = "heshanp"
 name = "jfr_recorder"
 version = "0.1.0"
-distribution = "2201.12.8"
+distribution = "2201.11.0"
 
 [build-options]
 observabilityIncluded = true

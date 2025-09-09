@@ -20,6 +20,11 @@ public isolated function recordJfr(string path, string[] events, int duration) {
     recordJfrInner(java:fromString(path), eventsArray, duration);
 }
 
+# Continuously record JFR recordings. At the end of each recording, start recording a new recording with the same settings.
+#
+# + path - the directory to create the JFR recording in
+# + events - the events to record, if empty will use a common set of events covering gc, allocations, threads and exceptions
+# + duration - the duration of the recording in seconds
 public isolated function continuouslyRecordJfr(string path, string[] events, int duration) {
     handle eventsArray = stringArrayToJavaStringArray(events);
     future<()> _ = start continuouslyRecordJfrInner(java:fromString(path), eventsArray, duration);
