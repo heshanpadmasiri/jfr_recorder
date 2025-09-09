@@ -1,0 +1,16 @@
+[package]
+org = "heshanp"
+name = "jfr_recorder"
+version = "0.1.0"
+distribution = "2201.12.8"
+
+[build-options]
+observabilityIncluded = true
+graalvmBuildOptions = "--enable-monitoring=jfr,jvmstat"
+
+[platform.java21]
+graalvmCompatible = true
+
+[[platform.java11.dependency]]
+# Absolute or relative path of the JAR file.
+path = "jfr_recorder.jar"
